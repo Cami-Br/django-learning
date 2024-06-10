@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Welcome!
+{% endblock %}
+
+{% block content%}
+  <h1>Welcome to the meeting plannerhhh!</h1>
+  {% if user.is_authenticated %}
+    <h2>Meetings</h2>
+    <ul>
+      {% for meeting in meetings %}
+      <li>
+        <a href="{% url 'details' meeting.id%}">{{meeting.title}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <p>Find a list with Rooms here - <a href="{% url 'rooms' %}"> Rooms</a></p>
+  {% endif %}
+
+{% endblock %}
