@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from meetings.models import Meeting
+from rest_framework.views import APIView
 
 
 def welcome(request):
@@ -15,5 +16,6 @@ def welcome(request):
     )
 
 
-def about_page(request):
-    return HttpResponse("Hello, my name is Cami!")
+class ReactView(APIView):
+    def about_page(request):
+        return HttpResponse("Hello, my name is Cami!")

@@ -17,12 +17,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from website.views import welcome, about_page
+from website.views import welcome, ReactView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", welcome, name="welcome"),
-    path("about", about_page),
+    path("about", ReactView.as_view()),
     path("meetings/", include('meetings.urls')),
     path('auth/', include('django.contrib.auth.urls')),
 ]
