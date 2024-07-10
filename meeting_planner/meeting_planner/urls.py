@@ -25,4 +25,5 @@ urlpatterns = [
     path("about", ReactView.as_view()),
     path("meetings/", include('meetings.urls')),
     path('auth/', include('django.contrib.auth.urls')),
+    path('api/', include('myapi.urls'))
 ]
