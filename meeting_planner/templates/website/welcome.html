@@ -1,22 +1,24 @@
 {% extends "base.html" %}
+{% load static %}
+ {% block title %}
+  Welcome! 
+  {% endblock %} 
+  {% block content%}
+<div class="center">
+  <h1>Welcome to the meeting planner!</h1>
+  <p>Log in in order to see the see the meetings</p>
+  <img src={% static "meeting_planner.jpg"%} />
+</div>
+{% if user.is_authenticated %}
+<h2>Meetings</h2>
+<ul>
+  {% for meeting in meetings %}
+  <li>
+    <a href="{% url 'details' meeting.id%}">{{meeting.title}}</a>
+  </li>
+  {% endfor %}
+</ul>
 
-{% block title %}
-  Welcome!
-{% endblock %}
-
-{% block content%}
-  <h1>Welcome to the meeting plannerhhh!</h1>
-  {% if user.is_authenticated %}
-    <h2>Meetings</h2>
-    <ul>
-      {% for meeting in meetings %}
-      <li>
-        <a href="{% url 'details' meeting.id%}">{{meeting.title}}</a>
-      </li>
-      {% endfor %}
-    </ul>
-
-    <p>Find a list with Rooms here - <a href="{% url 'rooms' %}"> Rooms</a></p>
-  {% endif %}
-
+<p>Find a list with Rooms here - <a href="{% url 'rooms' %}"> Rooms</a></p>
+{% endif %} 
 {% endblock %}

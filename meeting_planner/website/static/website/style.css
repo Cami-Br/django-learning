@@ -1,8 +1,12 @@
 body {
     font-family: sans-serif;
-    color:red;
+    color:black ;
     background-color: floralwhite;
 }
 h1 {
     color:grey;
+}
+.center {
+    display:flex;
+    justify-content: center;
 }
