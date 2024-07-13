@@ -132,3 +132,7 @@ LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 LOGIN_URL = "/auth/login"
 CORS_ORIGIN_ALLOW_ALL = True
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]

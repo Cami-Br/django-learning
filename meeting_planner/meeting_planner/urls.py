@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from website.views import welcome, ReactView
+from website.views import welcome, ReactView, index
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,5 +25,6 @@ urlpatterns = [
     path("about", ReactView.as_view()),
     path("meetings/", include('meetings.urls')),
     path('auth/', include('django.contrib.auth.urls')),
-    path('api/', include('myapi.urls'))
+    path('api/', include('myapi.urls')),
+    path('react-page', index, name='index'),
 ]

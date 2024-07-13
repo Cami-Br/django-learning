@@ -4,6 +4,10 @@ from meetings.models import Meeting
 from rest_framework.views import APIView
 
 
+def index(request):
+    return render(request, "index.html")
+
+
 def welcome(request):
     if request.user.is_authenticated:
         context = {"meetings": Meeting.objects.all()}
