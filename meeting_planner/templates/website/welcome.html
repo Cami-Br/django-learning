@@ -5,10 +5,10 @@
   {% endblock %} 
   {% block content%}
 <div class="center">
+  <div class="page-layout">
   <h1>Welcome to the meeting planner!</h1>
-  <p>Log in in order to see the see the meetings</p>
   <img src={% static "meeting_planner.jpg"%} />
-</div>
+
 {% if user.is_authenticated %}
 <h2>Meetings</h2>
 <ul>
@@ -20,5 +20,7 @@
 </ul>
 
 <p>Find a list with Rooms here - <a href="{% url 'rooms' %}"> Rooms</a></p>
+</div>
+</div>
 {% endif %} 
 {% endblock %}

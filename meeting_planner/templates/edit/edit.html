@@ -3,12 +3,16 @@
 {% block title %} Edit Meeting {% endblock %} 
 
 {% block content %}
+<div class="center">
+<div class="page-layout">
 <h1>Edit meeting!</h1>
 <form method="post">
   <table>
     {{form}}
   </table>
   {% csrf_token %}
-  <button type="submit"> Edit </button>
+  <button type="submit" class="log-button"> Edit </button>
 </form>
+</div>
+</div>
 {% endblock %}

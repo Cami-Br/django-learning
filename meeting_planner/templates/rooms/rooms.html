@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block content %}
+<div class="center">
+  <div class="page-layout">
   <h1>Room list</h1>
   <ul>
     {% for room in rooms %}
@@ -14,4 +16,6 @@
     {% endfor %}
   </ul>
   <a href={% url 'welcome' %}>Home</a>
+</div>
+  </div>
 {% endblock %}

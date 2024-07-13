@@ -9,16 +9,19 @@
   </head>
 
   <body>
+    <div class="center">
     {% if user.is_authenticated %}
       Logged in as: {{ user.get_username}}
       <form method="post" action="{% url 'logout' %}" style="float:right">
         {% csrf_token %}
-        <button type="submit">Logout </button>
+        <button type="submit" class="log-button">Log out </button>
       </form>
 
     {% else %}
-      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'login' %}">Log in</a>
+      <p>Log in in order to see the meetings.</p>
     {% endif %}
+  </div>
     {% block content %} {% endblock %}
   </body>
 </html>
