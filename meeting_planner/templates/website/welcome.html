@@ -8,8 +8,11 @@
   <div class="center">
     <div class="page-layout">
       <h1>Welcome to the meeting planner!</h1>
-      <img src={% static "meeting_planner.jpg"%} />
       {% if user.is_authenticated %}
+      <h2>Create a meeting
+        <a href="{% url 'new' %}">+</a>
+      </h2>
+     
         <h2>Meetings</h2>
         <ul>
           {% for meeting in meetings %}
