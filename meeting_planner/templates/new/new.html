@@ -3,16 +3,16 @@
 {% block title %} New Meeting {% endblock %} 
 
 {% block content %}
-<div class="center">
-  <div class="page-layout">
-<h1>Plan a new meeting!</h1>
-<form method="post">
-  <table>
-    {{form}}
-  </table>
-  {% csrf_token %}
-  <button type="submit"> Create a new meeting </button>
-</form>
-</div>
-</div>
+  <div class="center">
+    <div class="page-layout">
+      <h1>Plan a new meeting!</h1>
+      <form method="post">
+        <table>
+          {{form}}
+        </table>
+        {% csrf_token %}
+        <button type="submit" class="log-button"> Create a new meeting </button>
+      </form>
+    </div>
+  </div>
 {% endblock %}
